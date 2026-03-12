@@ -1,5 +1,7 @@
 import { useQuery } from 'react-query'
 
+import { IMovie } from '@/shared/types/movie.types'
+
 import { UserService } from '@/services/user/user.service'
 
 export const useFavorites = () => {
@@ -7,9 +9,7 @@ export const useFavorites = () => {
 		isLoading,
 		data: favoritesMovies,
 		refetch,
-	} = useQuery('Favorite movies', () => UserService.getFavorites(), {
-		select: ({ data }) => data,
-	})
+	} = useQuery<IMovie[]>('Favorite movies', () => UserService.getFavorites())
 
 	return { isLoading, favoritesMovies, refetch }
 }

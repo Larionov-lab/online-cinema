@@ -8,8 +8,10 @@ export const saveTokensStorage = (data: ITokens) => {
 }
 
 export const saveToStorage = (data: IAuthResponse) => {
-	saveTokensStorage(data)
-	localStorage.setItem('user', JSON.stringify(data.user))
+	const { accessToken, refreshToken, user } = data.data
+
+	saveTokensStorage({ accessToken, refreshToken })
+	localStorage.setItem('user', JSON.stringify(user))
 }
 
 export const removeTokensStorage = () => {

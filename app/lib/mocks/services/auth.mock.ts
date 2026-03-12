@@ -62,12 +62,14 @@ export const AuthMockService = {
 	async getNewTokens(): Promise<IAuthResponse> {
 		await mockDelay(300)
 
-		Cookies.set('accessToken', 'new_mock_token_' + Date.now())
+		const newAccessToken = 'new_mock_token_' + Date.now()
+		Cookies.set('accessToken', newAccessToken)
 
 		return {
 			data: {
 				user: mockUser,
-				...mockTokens,
+				accessToken: newAccessToken,
+				refreshToken: mockTokens.refreshToken,
 			},
 		}
 	},

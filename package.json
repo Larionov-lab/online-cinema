@@ -1,11 +1,11 @@
 {
-	"name": "movie-app-front-end",
+	"name": "online-cinema",
 	"author": {
-		"email": "info@htmllessons.ru",
-		"name": "Max Shushval (htmllessons.ru)",
-		"url": "https://htmllessons.ru"
+		"email": "sato08525@gmail.com",
+		"name": "Larionov-lab",
+		"url": "https://github.com/Larionov-lab"
 	},
-	"description": "Cinema application for premium intensive in htmllessons.ru",
+	"description": "Online cinema application with Next.js, React Query, Redux Toolkit. Mock data mode for portfolio.",
 	"private": true,
 	"scripts": {
 		"dev": "next dev",

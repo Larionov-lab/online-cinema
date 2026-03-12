@@ -1,4 +1,3 @@
-import { IMovieEditInput } from './movie-edit.interface'
 import { useRouter } from 'next/router'
 import { SubmitHandler, UseFormSetValue } from 'react-hook-form'
 import { useMutation, useQuery } from 'react-query'
@@ -11,6 +10,8 @@ import { getKeys } from '@/utils/object/getKeys'
 
 import { getAdminUrl } from '@/configs/url.config'
 
+import { IMovieEditInput } from './movie-edit.interface'
+
 export const useMovieEdit = (setValue: UseFormSetValue<IMovieEditInput>) => {
 	const { query, push } = useRouter()
 
@@ -22,7 +23,7 @@ export const useMovieEdit = (setValue: UseFormSetValue<IMovieEditInput>) => {
 		{
 			onSuccess({ data }) {
 				getKeys(data).forEach((key) => {
-					setValue(key, data[key])
+					setValue(key as keyof IMovieEditInput, data[key as keyof typeof data])
 				})
 			},
 			onError(error) {

@@ -10,8 +10,8 @@
 		@include fade-bg-gradient();
 
 		.image {
-			// @apply image-like-bg;
-			@apply object-top object-cover pointer-events-none;
+			@apply image-like-bg;
+			//@apply object-top object-cover pointer-events-none;
 		}
 
 		.content {
