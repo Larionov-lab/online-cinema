@@ -1,9 +1,8 @@
 import { FC } from 'react'
 
-import Sidebar from './Sidebar/Sidebar'
-import Navigation from './Navigation/Navigation'
-
 import styles from './Layout.module.scss'
+import Navigation from './Navigation/Navigation'
+import Sidebar from './Sidebar/Sidebar'
 
 const Layout: FC = ({ children }) => {
 	return (
